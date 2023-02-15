@@ -19,12 +19,12 @@ jobs:
 
     - name: Restore, Build and Publish
       run: |
-        dotnet publish -r win-x64 -c Release --self-contained=false /p:PublishSingleFile=true /p:IncludeNativeLibrariesForSelfExtract=true
+        dotnet publish -c Release
                 
     - name: Upload artifact
       uses: actions/upload-artifact@v2
       with:
-        name: Clippy
+        name: Greenshot
         path: |
           D:\a\Greenshot\Greenshot\bin\Release\net7.0-windows\publish\*
     - name: Generate release tag
