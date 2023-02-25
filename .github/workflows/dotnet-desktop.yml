@@ -30,13 +30,12 @@ jobs:
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: Release.zip
-        directory: ${{ runner.temp }}\publish
+        directory: ${{ runner.temp }}\publish 
 
-    - name: Release file
-      uses: djnicholson/release-action@v2.10
+    - name: Upload Release
+      uses: ncipollo/release-action@v1
       with:
-        token: ${{ secrets.GITHUB_TOKEN }}  
-        release-name: "${{ env.release_tag }}"
-        tag-name: "${{ env.release_tag }}"
-        asset-name: "Release.zip"
-        file: ${{ runner.temp }}\publish\Release.zip
+        artifacts: ${{ runner.temp }}/publish/Release.zip
+        tag: "${{ env.release_tag }}"
+        token: ${{ secrets.GITHUB_TOKEN }}
+        makeLatest: "true"
