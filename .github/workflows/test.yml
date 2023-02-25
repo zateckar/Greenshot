@@ -16,12 +16,18 @@ jobs:
     - name: Use the value
       id: step_two
       run: |
-        echo $env:action_state
+        echo $env:RUNNER_TEMP/publish
         
     - name: Use the value
       id: step_two2
       run: |
-        echo "${{ env.action_state }}"
+        echo $RUNNER_TEMP/publish
+        
+        
+    - name: Use the value
+      id: step_two3
+      run: |
+        echo ${{ runner.temp }}/publish
         
         
     - name: Set the value
