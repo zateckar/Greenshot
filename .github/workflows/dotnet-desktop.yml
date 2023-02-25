@@ -19,7 +19,7 @@ jobs:
 
     - name: Restore, Build and Publish
       run: |
-        dotnet publish -c Release -o ${{env.RUNNER_TEMP}}/publish
+        dotnet publish -c Release -p:PublishDir=${{env.RUNNER_TEMP}}/publish
                         
     - name: Generate release tag
       id: tag
