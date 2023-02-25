@@ -24,17 +24,13 @@ jobs:
     - name: Generate release tag
       id: tag
       run: |
-        echo "(Get-Date).ToString("yyyy.MM.dd_HH-mm")"
-        echo "release_tag=(Get-Date).ToString("yyyy.MM.dd_HH-mm")"
-        echo "release_tag=(Get-Date).ToString("yyyy.MM.dd_HH-mm")" >> $GITHUB_ENV
-        echo "$date"
-        echo "::set-output name=release_tag::Release_$(date +"%Y.%m.%d_%H-%M")"
+        echo "release_tag=Release_$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
 
     - name: Zip Release
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: Release.zip
-        path: D:/a/Greenshot/Greenshot/Greenshot/bin/Release/net7.0-windows/publish/*
+        directory: D:/a/Greenshot/Greenshot/Greenshot/bin/Release/net7.0-windows/publish
         
     - name: Release
       uses: softprops/action-gh-release@v1
