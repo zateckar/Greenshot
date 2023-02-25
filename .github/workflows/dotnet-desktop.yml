@@ -19,7 +19,7 @@ jobs:
 
     - name: Restore, Build and Publish
       run: |
-        dotnet publish -c Release -p:PublishDir=${{env.RUNNER_TEMP}}/publish
+        dotnet publish -c Release -p:PublishDir=${{RUNNER_TEMP}}/publish
                         
     - name: Generate release tag
       id: tag
@@ -30,13 +30,13 @@ jobs:
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: Release.zip
-        directory: ${{env.RUNNER_TEMP}}/publish
+        directory: ${{RUNNER_TEMP}}/publish
         
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
         tag_name: "${{ env.release_tag }}"
         files: |
-          ${{env.RUNNER_TEMP}}/publish/Release.zip
+          ${{RUNNER_TEMP}}/publish/Release.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
