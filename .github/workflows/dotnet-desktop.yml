@@ -37,6 +37,6 @@ jobs:
       with:
         tag_name: "${{ env.release_tag }}"
         files: |
-          $env:RUNNER_TEMP/publish/Release.zip
+          ${{ runner.temp }}/publish/Release.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
