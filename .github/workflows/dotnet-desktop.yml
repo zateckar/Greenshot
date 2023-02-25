@@ -31,12 +31,12 @@ jobs:
       with:
         filename: Release.zip
         directory: ${{ runner.temp }}\publish
-        
-    - name: Release
-      uses: softprops/action-gh-release@v1
+
+    - name: Release file
+      uses: djnicholson/release-action@v2.10
       with:
-        tag_name: "${{ env.release_tag }}"
-        files: |
-          ${{ runner.temp }}/publish/Release.zip
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
+        token: ${{ secrets.GITHUB_TOKEN }}  
+        release-name: "${{ env.release_tag }}"
+        tag-name: "${{ env.release_tag }}"
+        asset-name: "Release.zip"
+        file: ${{ runner.temp }}\publish\Release.zip
