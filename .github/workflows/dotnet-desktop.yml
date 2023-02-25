@@ -19,24 +19,24 @@ jobs:
 
     - name: Restore, Build and Publish
       run: |
-        dotnet publish -c Release
+        dotnet publish -c Release -o ${{env.RUNNER_TEMP}}/publish
                         
     - name: Generate release tag
       id: tag
       run: |
-        echo "::set-output name=release_tag::Release_$(date +"%Y.%m.%d_%H-%M")"
+        echo "release_tag=Release_$(date +"%Y.%m.%d_%H-%M")" >> $env:GITHUB_ENV
 
     - name: Zip Release
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: Release.zip
-        directory: D:/a/Greenshot/Greenshot/Greenshot/bin/Release/net7.0-windows/publish
+        directory: ${{env.RUNNER_TEMP}}/publish
         
     - name: Release
       uses: softprops/action-gh-release@v1
       with:
-        tag_name: ${{ steps.tag.outputs.release_tag }}
+        tag_name: "${{ env.release_tag }}"
         files: |
-          D:/a/Greenshot/Greenshot/Greenshot/bin/Release/net7.0-windows/publish/Release.zip
+          ${{env.RUNNER_TEMP}}/publish/Release.zip
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}    
