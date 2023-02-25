@@ -30,7 +30,7 @@ jobs:
       uses: TheDoctor0/zip-release@0.7.1
       with:
         filename: Release.zip
-        directory: $env:RUNNER_TEMP/publish
+        directory: ${{ runner.temp }}/publish
         
     - name: Release
       uses: softprops/action-gh-release@v1
