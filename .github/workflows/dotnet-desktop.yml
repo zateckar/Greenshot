@@ -24,7 +24,7 @@ jobs:
     - name: Generate release tag
       id: tag
       run: |
-        echo "release_tag=Release_$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
+        echo "::set-output name=release_tag::Release_$(date +"%Y.%m.%d_%H-%M")"
 
     - name: Zip Release
       uses: TheDoctor0/zip-release@0.7.1
