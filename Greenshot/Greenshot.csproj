@@ -79,10 +79,6 @@
     </GetFileHash>
     <WriteLinesToFile File="$(SolutionDir)$(SolutionName)\$(OutDir)\checksum.SHA256" Lines="@(FilesWithHashes->'%(Filename)%(Extension): %(FileHash)')" Overwrite="true" WriteOnlyWhenDifferent="true" />
   </Target>
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent" Condition="'$(Configuration)' == 'Release'">
-    <SetEnvironmentVariableTask Name="BuildVersionSimple" Value="$(BuildVersionSimple)" />
-    <SetEnvironmentVariableTask Name="AssemblyInformationalVersion" Value="$(AssemblyInformationalVersion)" />
-  </Target>
   <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
     <PostBuildEvent>
       copy "$(SolutionDir)Greenshot\log4net-debug.xml" "$(SolutionDir)Greenshot\bin\$(Configuration)\net7.0-windows\log4net.xml"
