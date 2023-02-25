@@ -22,7 +22,8 @@ jobs:
         dotnet publish -c Release
                         
     - name: Generate release tag
-      run: echo "release_tag=Release_$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_OUTPUT
+      run: |
+        echo "release_tag=Release_$(date +"%Y.%m.%d_%H-%M")" >> $GITHUB_ENV
     
     - name: Zip Release
       uses: TheDoctor0/zip-release@0.7.1
