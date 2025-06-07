@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>Greenshot</RootNamespace>
     <AssemblyName>Greenshot</AssemblyName>
@@ -23,7 +23,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Tools.InnoSetup" version="6.2.1" GeneratePathProperty="true" />
+    <PackageReference Include="Tools.InnoSetup" version="6.4.3" GeneratePathProperty="true" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Forms\MainForm.resx">

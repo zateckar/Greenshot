@@ -9,13 +9,13 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - uses: actions/setup-dotnet@v3
+    - uses: actions/setup-dotnet@v4
       with:
         dotnet-version: 7.0.x
         
-    - uses: microsoft/setup-msbuild@v1
+    - uses: microsoft/setup-msbuild@v2
 
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Restore, Build and Publish
       run: |
@@ -27,7 +27,7 @@ jobs:
         echo "release_tag=Release_$(date +"%Y.%m.%d_%H-%M")" >> $env:GITHUB_ENV
 
     - name: Zip Release
-      uses: TheDoctor0/zip-release@0.7.1
+      uses: TheDoctor0/zip-release@0.7.6
       with:
         filename: Release.zip
         directory: ${{ runner.temp }}\publish 
