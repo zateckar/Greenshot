@@ -1,5 +1,5 @@
 # Greenshot
-Greenshot upgraded to .NET 7. No other changes.
+Greenshot upgraded to newer .NET. No other changes.
 
 Original version and all credits: https://github.com/greenshot/greenshot
 

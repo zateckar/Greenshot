@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <TargetFramework>net8.0-windows8.0</TargetFramework>
@@ -13,11 +13,13 @@
     <PackageReference Include="Dapplo.Windows.Dpi" Version="1.0.28" />
     <PackageReference Include="Dapplo.Windows.Icons" Version="1.0.28" />
     <PackageReference Include="Dapplo.Windows.Multimedia" Version="1.0.28" />
+
     <PackageReference Include="HtmlAgilityPack" Version="1.11.60" />
     <PackageReference Include="log4net" version="2.0.17" />
     <PackageReference Include="Svg" Version="3.4.7" />
     <Reference Include="Accessibility" />
     <Reference Include="CustomMarshalers" />
+
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="log4net-embedded.xml" />

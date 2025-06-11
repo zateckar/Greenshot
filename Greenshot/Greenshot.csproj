@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <RootNamespace>Greenshot</RootNamespace>
     <AssemblyName>Greenshot</AssemblyName>
@@ -23,6 +23,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="Forms\BaseForm.resx" />
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
