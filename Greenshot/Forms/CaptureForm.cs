@@ -109,7 +109,6 @@ namespace Greenshot.Forms
         /// </summary>
         protected override CreateParams CreateParams
         {
-            [SecurityPermission(SecurityAction.LinkDemand, Flags = SecurityPermissionFlag.UnmanagedCode)]
             get
             {
                 CreateParams createParams = base.CreateParams;

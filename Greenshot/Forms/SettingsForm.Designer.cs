@@ -1024,57 +1024,6 @@ namespace Greenshot.Forms {
 			this.checkbox_alwaysshowprintoptionsdialog.Text = "Show print options dialog every time an image is printed";
 			this.checkbox_alwaysshowprintoptionsdialog.UseVisualStyleBackColor = true;
 			// 
-			// tab_plugins
-			// 
-			this.tab_plugins.Controls.Add(this.groupbox_plugins);
-			this.tab_plugins.LanguageKey = "settings_plugins";
-			this.tab_plugins.Location = new System.Drawing.Point(4, 22);
-			this.tab_plugins.Name = "tab_plugins";
-			this.tab_plugins.Size = new System.Drawing.Size(423, 351);
-			this.tab_plugins.TabIndex = 2;
-			this.tab_plugins.UseVisualStyleBackColor = true;
-			// 
-			// groupbox_plugins
-			// 
-			this.groupbox_plugins.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-			this.groupbox_plugins.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-			this.groupbox_plugins.Controls.Add(this.listview_plugins);
-			this.groupbox_plugins.Controls.Add(this.button_pluginconfigure);
-			this.groupbox_plugins.LanguageKey = "settings_plugins";
-			this.groupbox_plugins.Location = new System.Drawing.Point(0, 0);
-			this.groupbox_plugins.Name = "groupbox_plugins";
-			this.groupbox_plugins.Size = new System.Drawing.Size(423, 314);
-			this.groupbox_plugins.TabIndex = 0;
-			this.groupbox_plugins.TabStop = false;
-			this.groupbox_plugins.Text = "Plugins";
-			// 
-			// listview_plugins
-			// 
-			this.listview_plugins.Dock = System.Windows.Forms.DockStyle.Top;
-			this.listview_plugins.FullRowSelect = true;
-			this.listview_plugins.Location = new System.Drawing.Point(3, 16);
-			this.listview_plugins.Name = "listview_plugins";
-			this.listview_plugins.Size = new System.Drawing.Size(417, 263);
-			this.listview_plugins.TabIndex = 1;
-			this.listview_plugins.UseCompatibleStateImageBehavior = false;
-			this.listview_plugins.View = System.Windows.Forms.View.Details;
-			this.listview_plugins.SelectedIndexChanged += new System.EventHandler(this.Listview_pluginsSelectedIndexChanged);
-			this.listview_plugins.Click += new System.EventHandler(this.Listview_pluginsSelectedIndexChanged);
-			// 
-			// button_pluginconfigure
-			// 
-			this.button_pluginconfigure.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-			this.button_pluginconfigure.Enabled = false;
-			this.button_pluginconfigure.LanguageKey = "settings_configureplugin";
-			this.button_pluginconfigure.Location = new System.Drawing.Point(6, 285);
-			this.button_pluginconfigure.Name = "button_pluginconfigure";
-			this.button_pluginconfigure.Size = new System.Drawing.Size(75, 23);
-			this.button_pluginconfigure.TabIndex = 2;
-			this.button_pluginconfigure.UseVisualStyleBackColor = true;
-			this.button_pluginconfigure.Click += new System.EventHandler(this.Button_pluginconfigureClick);
-			// 
 			// tab_expert
 			// 
 			this.tab_expert.Controls.Add(this.groupbox_expert);
