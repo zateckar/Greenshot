@@ -66,7 +66,7 @@ namespace Greenshot.Forms {
 			this.contextmenu_quicksettings = new GreenshotToolStripMenuItem();
 			this.contextmenu_settings = new GreenshotToolStripMenuItem();
 			this.contextmenu_help = new GreenshotToolStripMenuItem();
-			this.contextmenu_donate = new GreenshotToolStripMenuItem();
+			//this.contextmenu_donate = new GreenshotToolStripMenuItem();
 			this.contextmenu_about = new GreenshotToolStripMenuItem();
             this.contextmenu_exit = new GreenshotToolStripMenuItem();
             this.toolStripListCaptureSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -99,7 +99,7 @@ namespace Greenshot.Forms {
 									this.contextmenu_settings,
 									this.toolStripMiscSeparator,
 									this.contextmenu_help,
-									this.contextmenu_donate,
+									//this.contextmenu_donate,
 									this.contextmenu_about,
 									this.toolStripCloseSeparator,
 									this.contextmenu_exit});
@@ -220,17 +220,17 @@ namespace Greenshot.Forms {
 			// 
 			// contextmenu_help
 			// 
-			this.contextmenu_help.Image = ((System.Drawing.Image)(resources.GetObject("contextmenu_help.Image")));
-			this.contextmenu_help.Name = "contextmenu_help";
-			this.contextmenu_help.Size = new System.Drawing.Size(170, 22);
-			this.contextmenu_help.Click += new System.EventHandler(this.Contextmenu_HelpClick);
+			//this.contextmenu_help.Image = ((System.Drawing.Image)(resources.GetObject("contextmenu_help.Image")));
+			//this.contextmenu_help.Name = "contextmenu_help";
+			//this.contextmenu_help.Size = new System.Drawing.Size(170, 22);
+			//this.contextmenu_help.Click += new System.EventHandler(this.Contextmenu_HelpClick);
 			// 
 			// contextmenu_donate
 			// 
-			this.contextmenu_donate.Image = ((System.Drawing.Image)(resources.GetObject("contextmenu_donate.Image")));
-			this.contextmenu_donate.Name = "contextmenu_donate";
-			this.contextmenu_donate.Size = new System.Drawing.Size(170, 22);
-			this.contextmenu_donate.Click += new System.EventHandler(this.Contextmenu_DonateClick);
+			//this.contextmenu_donate.Image = ((System.Drawing.Image)(resources.GetObject("contextmenu_donate.Image")));
+			//this.contextmenu_donate.Name = "contextmenu_donate";
+			//this.contextmenu_donate.Size = new System.Drawing.Size(170, 22);
+			//this.contextmenu_donate.Click += new System.EventHandler(this.Contextmenu_DonateClick);
 			// 
 			// contextmenu_about
 			// 
@@ -279,7 +279,7 @@ namespace Greenshot.Forms {
 		private System.Windows.Forms.ToolStripSeparator toolStripListCaptureSeparator;
 		private GreenshotToolStripMenuItem contextmenu_openrecentcapture;
         private GreenshotToolStripMenuItem contextmenu_captureie;
-		private GreenshotToolStripMenuItem contextmenu_donate;
+		//private GreenshotToolStripMenuItem contextmenu_donate;
 		private GreenshotToolStripMenuItem contextmenu_openfile;
 		private System.Windows.Forms.ToolStripSeparator toolStripPluginSeparator;
 		private GreenshotToolStripMenuItem contextmenu_captureclipboard;

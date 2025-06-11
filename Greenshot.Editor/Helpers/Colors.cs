@@ -28,7 +28,7 @@ namespace Greenshot.Editor.Helpers
     {
         public static bool IsVisible(Color c)
         {
-            return c != null && !c.Equals(Color.Empty) && !c.Equals(Color.Transparent) && c.A > 0;
+            return !c.Equals(Color.Empty) && !c.Equals(Color.Transparent) && c.A > 0;
         }
 
         public static Color Mix(List<Color> colors)

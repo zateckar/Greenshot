@@ -8,14 +8,14 @@
     <PackageProjectUrl>https://github.com/greenshot/greenshot</PackageProjectUrl>
     <PackageLicenseExpression>GPL-3.0-only</PackageLicenseExpression>
     <LangVersion>latest</LangVersion>
-    <UseWPF>true</UseWPF>
+    <UseWPF>false</UseWPF>
     <UseWindowsForms>true</UseWindowsForms>
-    <RuntimeIdentifiers>win10-x64;win10-x86;win-x64;win-x86</RuntimeIdentifiers>
+    <RuntimeIdentifiers>win-x64</RuntimeIdentifiers>
     <!-- Optional: Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <PublishRepositoryUrl>false</PublishRepositoryUrl>
     <!-- Optional: Embed source files that are not tracked by the source control manager in the PDB -->
     <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <TargetFramework>net472</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
     <Deterministic>true</Deterministic>
   </PropertyGroup>

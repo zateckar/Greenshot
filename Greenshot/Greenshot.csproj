@@ -8,7 +8,7 @@
     <ApplicationManifest>greenshot.manifest</ApplicationManifest>
     <EmbeddedResourceUseDependentUponConvention>false</EmbeddedResourceUseDependentUponConvention>
     <EnableDefaultEmbeddedResourceItems>false</EnableDefaultEmbeddedResourceItems>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
     <IncludeNativeLibrariesForSelfExtract>true</IncludeNativeLibrariesForSelfExtract>
 	<DebugType>embedded</DebugType>
 	<EnableCompressionInSingleFile>false</EnableCompressionInSingleFile>
@@ -23,9 +23,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Tools.InnoSetup" version="6.4.3" GeneratePathProperty="true" />
-  </ItemGroup>
-  <ItemGroup>
+
+    <EmbeddedResource Include="Forms\BaseForm.resx" />
     <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -37,7 +36,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Greenshot.Base\Greenshot.Base.csproj" />
     <ProjectReference Include="..\Greenshot.Editor\Greenshot.Editor.csproj" />
-    <FilesToHash Include="$(SolutionDir)$(SolutionName)\$(OutDir)\*" />
   </ItemGroup>
   <ItemGroup>
     <Compile Update="Properties\Settings.Designer.cs">
@@ -47,9 +45,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Update="log4net.xml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -73,15 +68,4 @@
       ]]></Code>
     </Task>
   </UsingTask>
-  <Target Name="Generate hashes" BeforeTargets="PostBuildEvent">
-    <GetFileHash Files="@(FilesToHash)" Algorithm="SHA256" HashEncoding="hex">
-      <Output TaskParameter="Items" ItemName="FilesWithHashes" />
-    </GetFileHash>
-    <WriteLinesToFile File="$(SolutionDir)$(SolutionName)\$(OutDir)\checksum.SHA256" Lines="@(FilesWithHashes->'%(Filename)%(Extension): %(FileHash)')" Overwrite="true" WriteOnlyWhenDifferent="true" />
-  </Target>
-  <PropertyGroup Condition="'$(Configuration)' == 'Debug'">
-    <PostBuildEvent>
-      copy "$(SolutionDir)Greenshot\log4net-debug.xml" "$(SolutionDir)Greenshot\bin\$(Configuration)\net7.0-windows\log4net.xml"
-    </PostBuildEvent>
-  </PropertyGroup>
 </Project>

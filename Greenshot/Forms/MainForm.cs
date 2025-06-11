@@ -42,7 +42,6 @@ using Greenshot.Base.Controls;
 using Greenshot.Base.Core;
 using Greenshot.Base.Core.Enums;
 using Greenshot.Base.Core.FileFormatHandlers;
-using Greenshot.Base.Help;
 using Greenshot.Base.IniFile;
 using Greenshot.Base.Interfaces;
 using Greenshot.Base.Interfaces.Plugin;
@@ -437,7 +436,7 @@ namespace Greenshot.Forms
             RegisterInternalProcessors();
 
             // Load all the plugins
-            PluginHelper.Instance.LoadPlugins();
+            //PluginHelper.Instance.LoadPlugins();
 
             // Check to see if there is already another INotificationService
             if (SimpleServiceProvider.Current.GetInstance<INotificationService>() == null)
@@ -498,10 +497,6 @@ namespace Greenshot.Forms
                 HandleDataTransport(dataTransport);
             }
 
-            // Start the update check in the background
-            var updateService = new UpdateService();
-            updateService.Startup();
-            SimpleServiceProvider.Current.AddService(updateService);
 
             // Make Greenshot use less memory after startup
             if (_conf.MinimizeWorkingSetSize)
@@ -614,7 +609,7 @@ namespace Greenshot.Forms
                         try
                         {
                             IniConfig.Reload();
-                            Invoke((MethodInvoker) delegate
+                            Invoke((System.Windows.Forms.MethodInvoker) delegate
                             {
                                 // Even update language when needed
                                 UpdateUi();
@@ -635,7 +630,7 @@ namespace Greenshot.Forms
                         LOG.InfoFormat("Open file requested: {0}", filename);
                         if (File.Exists(filename))
                         {
-                            BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureFile(filename); });
+                            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { CaptureHelper.CaptureFile(filename); });
                         }
                         else
                         {
@@ -1046,7 +1041,7 @@ namespace Greenshot.Forms
             {
                 // birthday
                 var resources = new ComponentResourceManager(typeof(MainForm));
-                contextmenu_donate.Image = (Image) resources.GetObject("contextmenu_present.Image");
+                //contextmenu_donate.Image = (Image) resources.GetObject("contextmenu_present.Image");
             }
         }
 
@@ -1133,7 +1128,7 @@ namespace Greenshot.Forms
 
             var captureScreenItem = new ToolStripMenuItem(Language.GetString(LangKey.contextmenu_capturefullscreen_all));
             captureScreenItem.Click += delegate {
-                BeginInvoke((MethodInvoker) delegate {
+                BeginInvoke((System.Windows.Forms.MethodInvoker) delegate {
                     CaptureHelper.CaptureFullscreen(false, ScreenCaptureMode.FullScreen);
                 });
             };
@@ -1165,7 +1160,7 @@ namespace Greenshot.Forms
                 captureScreenItem = new ToolStripMenuItem(deviceAlignment);
                 captureScreenItem.Click += delegate
                 {
-                    BeginInvoke((MethodInvoker) delegate
+                    BeginInvoke((System.Windows.Forms.MethodInvoker) delegate
                     {
                         CaptureHelper.CaptureRegion(false, displayToCapture.Bounds);
                     });
@@ -1274,38 +1269,38 @@ namespace Greenshot.Forms
 
         private void CaptureAreaToolStripMenuItemClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureRegion(false); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { CaptureHelper.CaptureRegion(false); });
         }
 
         private void CaptureClipboardToolStripMenuItemClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureClipboard(); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { CaptureHelper.CaptureClipboard(); });
         }
 
         private void OpenFileToolStripMenuItemClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { CaptureFile(); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { CaptureFile(); });
         }
 
         private void CaptureFullScreenToolStripMenuItemClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureFullscreen(false, _conf.ScreenCaptureMode); });
+            BeginInvoke((System.Windows.Forms.  MethodInvoker) delegate { CaptureHelper.CaptureFullscreen(false, _conf.ScreenCaptureMode); });
         }
 
         private void Contextmenu_CaptureLastRegionClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureLastRegion(false); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { CaptureHelper.CaptureLastRegion(false); });
         }
 
         private void Contextmenu_CaptureWindow_Click(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { CaptureHelper.CaptureWindowInteractive(false); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { CaptureHelper.CaptureWindowInteractive(false); });
         }
 
         private void Contextmenu_CaptureWindowFromList_Click(object sender, EventArgs e)
         {
             ToolStripMenuItem clickedItem = (ToolStripMenuItem) sender;
-            BeginInvoke((MethodInvoker) delegate
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate
             {
                 try
                 {
@@ -1334,7 +1329,7 @@ namespace Greenshot.Forms
 
             ToolStripMenuItem clickedItem = (ToolStripMenuItem) sender;
             KeyValuePair<WindowDetails, int> tabData = (KeyValuePair<WindowDetails, int>) clickedItem.Tag;
-            BeginInvoke((MethodInvoker) delegate
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate
             {
                 WindowDetails ieWindowToCapture = tabData.Key;
                 if (ieWindowToCapture != null && (!ieWindowToCapture.Visible || ieWindowToCapture.Iconic))
@@ -1369,7 +1364,7 @@ namespace Greenshot.Forms
         /// <param name="e">EventArgs</param>
         private void Contextmenu_DonateClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) delegate { Process.Start("https://getgreenshot.org/support/?version=" + EnvironmentInfo.GetGreenshotVersion(true)); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { Process.Start("https://getgreenshot.org/support/?version=" + EnvironmentInfo.GetGreenshotVersion(true)); });
         }
 
         /// <summary>
@@ -1379,7 +1374,7 @@ namespace Greenshot.Forms
         /// <param name="e"></param>
         private void Contextmenu_SettingsClick(object sender, EventArgs e)
         {
-            BeginInvoke((MethodInvoker) ShowSetting);
+            BeginInvoke((System.Windows.Forms.MethodInvoker) ShowSetting);
         }
 
         /// <summary>
@@ -1447,10 +1442,10 @@ namespace Greenshot.Forms
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Contextmenu_HelpClick(object sender, EventArgs e)
-        {
-            HelpFileLoader.LoadHelp();
-        }
+        //private void Contextmenu_HelpClick(object sender, EventArgs e)
+        //{
+        //    HelpFileLoader.LoadHelp();
+        //}
 
         /// <summary>
         /// The "Exit" entry is clicked
@@ -1740,7 +1735,7 @@ namespace Greenshot.Forms
         {
             _doubleClickTimer.Elapsed -= NotifyIconSingleClickTest;
             _doubleClickTimer.Stop();
-            BeginInvoke((MethodInvoker) delegate { NotifyIconClick(_conf.LeftClickAction); });
+            BeginInvoke((System.Windows.Forms.MethodInvoker) delegate { NotifyIconClick(_conf.LeftClickAction); });
         }
 
         /// <summary>
@@ -1864,7 +1859,7 @@ namespace Greenshot.Forms
                 {
                     LOG.InfoFormat("Closing form: {0}", form.Name);
                     Form formCapturedVariable = form;
-                    Invoke((MethodInvoker) delegate { formCapturedVariable.Close(); });
+                    Invoke((System.Windows.Forms.MethodInvoker) delegate { formCapturedVariable.Close(); });
                 }
                 catch (Exception e)
                 {
@@ -1892,15 +1887,6 @@ namespace Greenshot.Forms
                 LOG.Error("Error deinitializing sound!", e);
             }
 
-            // Inform all registed plugins
-            try
-            {
-                PluginHelper.Instance.Shutdown();
-            }
-            catch (Exception e)
-            {
-                LOG.Error("Error shutting down plugins!", e);
-            }
 
             // Gracefull shutdown
             try

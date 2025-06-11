@@ -118,7 +118,7 @@ namespace Greenshot.Editor.Forms {
 			this.downToBottomToolStripMenuItem = new GreenshotToolStripMenuItem();
 			this.saveElementsToolStripMenuItem = new GreenshotToolStripMenuItem();
 			this.loadElementsToolStripMenuItem = new GreenshotToolStripMenuItem();
-			this.pluginToolStripMenuItem = new GreenshotToolStripMenuItem();
+			//this.pluginToolStripMenuItem = new GreenshotToolStripMenuItem();
 			this.helpToolStripMenuItem = new GreenshotToolStripMenuItem();
 			this.helpToolStripMenuItem1 = new GreenshotToolStripMenuItem();
 			this.aboutToolStripMenuItem = new GreenshotToolStripMenuItem();
@@ -564,7 +564,7 @@ namespace Greenshot.Editor.Forms {
 									this.fileStripMenuItem,
 									this.editToolStripMenuItem,
 									this.objectToolStripMenuItem,
-									this.pluginToolStripMenuItem,
+									//this.pluginToolStripMenuItem,
 									this.zoomMainMenuItem,
 									this.helpToolStripMenuItem});
 			this.menuStrip1.Name = "menuStrip1";
@@ -841,31 +841,6 @@ namespace Greenshot.Editor.Forms {
 			this.loadElementsToolStripMenuItem.LanguageKey = "editor_load_objects";
 			this.loadElementsToolStripMenuItem.Name = "loadElementsToolStripMenuItem";
 			this.loadElementsToolStripMenuItem.Click += new System.EventHandler(this.LoadElementsToolStripMenuItemClick);
-			// 
-			// pluginToolStripMenuItem
-			// 
-			this.pluginToolStripMenuItem.LanguageKey = "settings_plugins";
-			this.pluginToolStripMenuItem.Name = "pluginToolStripMenuItem";
-			this.pluginToolStripMenuItem.Text = "Plugins";
-			this.pluginToolStripMenuItem.Visible = false;
-			// 
-			// helpToolStripMenuItem
-			// 
-			this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-									this.helpToolStripMenuItem1,
-									this.aboutToolStripMenuItem});
-			this.helpToolStripMenuItem.LanguageKey = "contextmenu_help";
-			this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-			this.helpToolStripMenuItem.Text = "Help";
-			// 
-			// helpToolStripMenuItem1
-			// 
-			this.helpToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("helpToolStripMenuItem1.Image")));
-			this.helpToolStripMenuItem1.LanguageKey = "contextmenu_help";
-			this.helpToolStripMenuItem1.Name = "helpToolStripMenuItem1";
-			this.helpToolStripMenuItem1.ShortcutKeys = System.Windows.Forms.Keys.F1;
-			this.helpToolStripMenuItem1.Click += new System.EventHandler(this.HelpToolStripMenuItem1Click);
-			// 
 			// aboutToolStripMenuItem
 			// 
 			this.aboutToolStripMenuItem.LanguageKey = "contextmenu_about";
@@ -1016,16 +991,6 @@ namespace Greenshot.Editor.Forms {
 			// toolStripSeparator16
 			// 
 			this.toolStripSeparator16.Name = "toolStripSeparator16";
-			// 
-			// btnHelp
-			// 
-			this.btnHelp.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-			this.btnHelp.Image = ((System.Drawing.Image)(resources.GetObject("btnHelp.Image")));
-			this.btnHelp.ImageTransparentColor = System.Drawing.Color.Magenta;
-			this.btnHelp.LanguageKey = "contextmenu_help";
-			this.btnHelp.Name = "btnHelp";
-			this.btnHelp.Text = "Help";
-			this.btnHelp.Click += new System.EventHandler(this.BtnHelpClick);
 			// 
 			// propertiesToolStrip
 			// 
@@ -1937,7 +1902,7 @@ namespace Greenshot.Editor.Forms {
 		private GreenshotToolStripLabel fontSizeLabel;
 		private ToolStripNumericUpDown brightnessUpDown;
 		private GreenshotToolStripLabel brightnessLabel;
-		private GreenshotToolStripMenuItem pluginToolStripMenuItem;
+		//private GreenshotToolStripMenuItem pluginToolStripMenuItem;
 		private GreenshotToolStripDropDownButton arrowHeadsDropDownButton;
 		private GreenshotToolStripLabel arrowHeadsLabel;
 		private ToolStripNumericUpDown pixelSizeUpDown;

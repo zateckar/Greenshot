@@ -38,7 +38,6 @@ using Greenshot.Base;
 using Greenshot.Base.Controls;
 using Greenshot.Base.Core;
 using Greenshot.Base.Effects;
-using Greenshot.Base.Help;
 using Greenshot.Base.IniFile;
 using Greenshot.Base.Interfaces;
 using Greenshot.Base.Interfaces.Drawing;
@@ -289,7 +288,7 @@ namespace Greenshot.Editor.Forms
             };
             //toolbarDropDownButtons = new ToolStripDropDownButton[]{btnBlur, btnPixeliate, btnTextHighlighter, btnAreaHighlighter, btnMagnifier};
 
-            pluginToolStripMenuItem.Visible = pluginToolStripMenuItem.DropDownItems.Count > 0;
+            //pluginToolStripMenuItem.Visible = pluginToolStripMenuItem.DropDownItems.Count > 0;
 
             // Make sure the value is set correctly when starting
             if (Surface != null)
@@ -895,11 +894,6 @@ namespace Greenshot.Editor.Forms
         }
 
 
-        private void HelpToolStripMenuItem1Click(object sender, EventArgs e)
-        {
-            HelpFileLoader.LoadHelp();
-        }
-
         private void AboutToolStripMenuItemClick(object sender, EventArgs e)
         {
             var mainForm = SimpleServiceProvider.Current.GetInstance<IGreenshotMainForm>();
@@ -917,10 +911,6 @@ namespace Greenshot.Editor.Forms
             PreferencesToolStripMenuItemClick(sender, e);
         }
 
-        private void BtnHelpClick(object sender, EventArgs e)
-        {
-            HelpToolStripMenuItem1Click(sender, e);
-        }
 
         private void ImageEditorFormActivated(object sender, EventArgs e)
         {
