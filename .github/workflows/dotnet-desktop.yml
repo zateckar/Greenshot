@@ -18,7 +18,7 @@ jobs:
         
     - uses: microsoft/setup-msbuild@v2
 
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
 
     - name: Restore, Build and Publish
       run: |
